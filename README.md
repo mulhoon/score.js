@@ -1,21 +1,24 @@
 # levelup.js
 
-**levelup.js** is a small (2kb) javascript module to manage player progress across gaming levels. http://mulhoon.github.io/levelup.js/
+**levelup.js** is a small (2kb) javascript module to manage player progress across gaming levels. DEMO: http://mulhoon.github.io/levelup.js/
 
-[WORK IN PROGRESS]
+*This is a work in progress*
 
 ## Quick usage
 ```
 var levelup = new LevelUp();
-levelup.score(123);
 
-var scorecard = levelup.get();
+// get score
+levelup.score();
+
+// set score
+levelup.score(123);
 ```
-scorecard returns...
+score() returns...
 ```
 {
 	score:123						// current total score
-	title:"Soldier",				// current title
+	title:"Gorilla",				// current title
 	quote:"You're a true soldier"	// current quote
 	level:2,						// current level
 	levelscore:13,					// current level score
@@ -33,13 +36,10 @@ levelup.js comes with 10 levels as default, each 100 points apart. These can eas
 ```
 var scorecard = new LevelUp(
 	{
-		persistant:boolean			// uses localStorage
-		levels:{}					// custom levels
+		persistant:boolean			// uses localStorage (TBC)
+		levels:{}					// custom levels (more explanation soon)
 		callback:function(){...}	// trigger when levelling up
 	}
 );
 
 ```
-
-## Example
-Check out the demo http://mulhoon.github.io/levelup.js/
