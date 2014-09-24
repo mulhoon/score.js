@@ -1,0 +1,59 @@
+//
+// Icon Font: font_icons8
+//
+
+@font-face {
+  font-family: "font_icons8";
+  src: font-url("font_icons8.eot");
+  src: font-url("font_icons8.eot?#iefix") format("embedded-opentype"),
+       font-url("font_icons8.woff") format("woff"),
+       font-url("font_icons8.ttf") format("truetype"),
+       font-url("font_icons8.svg#font_icons8") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "font_icons8";
+    src: font-url("font_icons8.svg#font_icons8") format("svg");
+  }
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icons8-bee:before,
+.icons8-cat:before,
+.icons8-dolphin:before,
+.icons8-gorilla:before,
+.icons8-horse:before,
+.icons8-octopus:before,
+.icons8-pig:before,
+.icons8-rabbit:before,
+.icons8-sheep:before,
+.icons8-turtle:before {
+  display: inline-block;
+  font-family: "font_icons8";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+
+.icons8-bee:before { content: "\f100"; }
+.icons8-cat:before { content: "\f101"; }
+.icons8-dolphin:before { content: "\f102"; }
+.icons8-gorilla:before { content: "\f103"; }
+.icons8-horse:before { content: "\f104"; }
+.icons8-octopus:before { content: "\f105"; }
+.icons8-pig:before { content: "\f106"; }
+.icons8-rabbit:before { content: "\f107"; }
+.icons8-sheep:before { content: "\f108"; }
+.icons8-turtle:before { content: "\f109"; }
