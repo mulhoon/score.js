@@ -1,6 +1,6 @@
 # levelup.js
 
-**levelup.js** is a small (2kb) javascript module to manage player progress across gaming levels. DEMO: http://mulhoon.github.io/levelup.js/
+**levelup.js** is micro javascript module to manage player progress across gaming levels. DEMO: http://mulhoon.github.io/levelup.js/
 
 *This is a work in progress*
 
