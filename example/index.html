@@ -1,184 +1,184 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>levelup.js - checkpoints for your score</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>levelup.js - checkpoints for your score</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
 
-        <script src="../source/levelup.js"></script>
-        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
-        <link href="font/font_icons8.css" rel="stylesheet">
-        <style>
-            body{
-                font-family: 'Lato', sans-serif;
-                text-align: center;
-                font-size: 16px;
-                margin:0px;
-                padding:0px;
-            }
-            #page{
-                display: inline-block;
-                width: 300px;
-            }
-            h1{
-                font-weight: 100;
-                font-size: 4.5em;
-                margin-bottom:0;
-                margin-top:0.5em;
-            }
-            h2{
-                font-weight: 300;
-                font-size: 0.85em;
-                color: #999;
-                margin-bottom:4em;
+		<script src="../source/levelup.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+		<link href="font/font_icons8.css" rel="stylesheet">
+		<style>
+			body{
+				font-family: 'Lato', sans-serif;
+				text-align: center;
+				font-size: 16px;
+				margin:0px;
+				padding:0px;
+			}
+			#page{
+				display: inline-block;
+				width: 300px;
+			}
+			h1{
+				font-weight: 100;
+				font-size: 4.5em;
+				margin-bottom:0;
+				margin-top:0.5em;
+			}
+			h2{
+				font-weight: 300;
+				font-size: 0.85em;
+				color: #999;
+				margin-bottom:4em;
 
-            }
-            #scorecard{
-                text-align: left;
-                padding:20px;
-                background: #444;
-                color:#FFF;
-                margin-bottom:10px;
-            }
-            #status{
-                transition:opacity .2s ease-in-out;
-                border-radius: 10px;
-                opacity:0;
-                height:40px;
-                height:40px;
-                line-height: 40px;
-                background:#fcf8e3;
-            }
-            #status.show{
-                opacity:1;
-            }
-            i{
-                font-size: .75em;
-                color: #888;
-            }
-            a{
-                color:#3D9970;
-            }
-            .score{
-                clear: both;
-                margin-bottom:10px;
-                font-size: 0.85em;
-            }
-            #score{
-                font-size: 1em;
-                width:140px;
-                height:40px;
-                line-height: 40px;
-                color: #999;
-                background: #EEE;
-                display: inline-block;
-                border-radius: 20px;
-                margin-bottom: 10px;
-            }
-            h3{
-                margin:0;
-                padding:0;
-            }
-            #icon{
-                background: #FFF;
-                width:100px;
-                height:100px;
-                color:black;
-                font-size: 4em;
-                text-align: center;
-                line-height: 100px;
-                float:left;
-                margin-right:10px;
-                margin-bottom:10px;
-            }
-            input, progress{
-                width:100%;
-            }
-            progress[value] {
-                -webkit-appearance: none;
-                appearance: none;
-                height:20px;
-            }         
-            progress[value]::-webkit-progress-bar {
-                background-color: #666;
-                border-radius: 0px;
-                overflow: hidden;
-            } 
-            progress[value]::-webkit-progress-value {
-                background: #3D9970;
-                border-radius: 0px; 
-            }
-        </style>
-    </head>
-    <body>
-        <section id="page">
-            <h1>levelup.js</h1>
-            <h2>checkpoints for your score</h2>
-            <div id='score'></div>
-            <input id="slider" type="range" min="0" max="4200" value="225" oninput="updateScore(this.value)" />
-            <br/><br/>
+			}
+			#scorecard{
+				text-align: left;
+				padding:20px;
+				background: #444;
+				color:#FFF;
+				margin-bottom:10px;
+			}
+			#status{
+				transition:opacity .2s ease-in-out;
+				border-radius: 10px;
+				opacity:0;
+				height:40px;
+				height:40px;
+				line-height: 40px;
+				background:#fcf8e3;
+			}
+			#status.show{
+				opacity:1;
+			}
+			i{
+				font-size: .75em;
+				color: #888;
+			}
+			a{
+				color:#3D9970;
+			}
+			.score{
+				clear: both;
+				margin-bottom:10px;
+				font-size: 0.85em;
+			}
+			#score{
+				font-size: 1em;
+				width:140px;
+				height:40px;
+				line-height: 40px;
+				color: #999;
+				background: #EEE;
+				display: inline-block;
+				border-radius: 20px;
+				margin-bottom: 10px;
+			}
+			h3{
+				margin:0;
+				padding:0;
+			}
+			#icon{
+				background: #FFF;
+				width:100px;
+				height:100px;
+				color:black;
+				font-size: 4em;
+				text-align: center;
+				line-height: 100px;
+				float:left;
+				margin-right:10px;
+				margin-bottom:10px;
+			}
+			input, progress{
+				width:100%;
+			}
+			progress[value] {
+				-webkit-appearance: none;
+				appearance: none;
+				height:20px;
+			}         
+			progress[value]::-webkit-progress-bar {
+				background-color: #666;
+				border-radius: 0px;
+				overflow: hidden;
+			} 
+			progress[value]::-webkit-progress-value {
+				background: #3D9970;
+				border-radius: 0px; 
+			}
+		</style>
+	</head>
+	<body>
+		<section id="page">
+			<h1>levelup.js</h1>
+			<h2>checkpoints for your score</h2>
+			<div id='score'></div>
+			<input id="slider" type="range" min="0" max="4200" value="225" oninput="updateScore(this.value)" />
+			<br/><br/>
 
-            <div id='scorecard'>
+			<div id='scorecard'>
 
-                <div id='icon'></div>
-                <h3>John Doe</h3>
-                Level: {level} <br/>
-                Status: {status}<br/>
-                <i>'{quote}'</i>
+				<div id='icon'></div>
+				<h3>John Doe</h3>
+				Level: {level} <br/>
+				Status: {status}<br/>
+				<i>'{quote}'</i>
 
-                <div class='score'>
-                    Score: {score} <br/>
-                    Level score: {levelscore}/{leveltotal} <br/>
-                    Total progress: {totalprogress}% <br/>
-                </div>
-                <progress max="100" value="{levelprogress}"></progress>
-                
-            </div>
-            <br/>
-            <a href="https://github.com/mulhoon/levelup.js">Read more</a> &nbsp;&middot;&nbsp;
-            <a href="https://github.com/mulhoon/levelup.js">Download on Github</a>
-            <br/><br/><br/>
-        </section>
+				<div class='score'>
+					Score: {score} <br/>
+					Level score: {levelscore}/{leveltotal} <br/>
+					Total progress: {totalprogress}% <br/>
+				</div>
+				<progress max="100" value="{levelprogress}"></progress>
+				
+			</div>
+			<br/>
+			<a href="https://github.com/mulhoon/levelup.js">Read more</a> &nbsp;&middot;&nbsp;
+			<a href="https://github.com/mulhoon/levelup.js">Download on Github</a>
+			<br/><br/><br/>
+		</section>
 
-        <script>
+		<script>
 
-            // setup
-            var lu = new LevelUp();
+			// setup
+			var lu = new LevelUp();
 
-            var scorecard = document.getElementById("scorecard");
-            var slider = document.getElementById("slider");
-            var template = scorecard.innerHTML;
+			var scorecard = document.getElementById("scorecard");
+			var slider = document.getElementById("slider");
+			var template = scorecard.innerHTML;
 
-            function updateScore(v){
-                // Set score
-                lu.score(v);
-                updateCard();
-            };
+			function updateScore(v){
+				// Set score
+				lu.score(v);
+				updateCard();
+			};
 
-            function updateCard(){
-                var s = template;
+			function updateCard(){
+				var s = template;
 
-                // Get scorecard
-                var d = lu.scorecard();
+				// Get scorecard
+				var d = lu.scorecard();
 
-                // populate template
-                for(var p in d){
-                    s=s.replace(new RegExp('{'+p+'}','g'), d[p]);
-                }
+				// populate template
+				for(var p in d){
+					s=s.replace(new RegExp('{'+p+'}','g'), d[p]);
+				}
 
-                slider.value = d.score;
+				slider.value = d.score;
 
-                scorecard.innerHTML = s;
-                scorecard.className = d.status;
-                document.getElementById("score").innerHTML = 'score: '+d.score;
-                document.getElementById("icon").className = 'icons8-' + d.status;
-            };
+				scorecard.innerHTML = s;
+				scorecard.className = d.status;
+				document.getElementById("score").innerHTML = 'score: '+d.score;
+				document.getElementById("icon").className = 'icons8-' + d.status;
+			};
 
-            updateCard();
+			updateCard();
 
 
-        </script>
+		</script>
 
-    </body>
+	</body>
 </html>
