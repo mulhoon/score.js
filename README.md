@@ -8,13 +8,19 @@
 ```
 var levelup = new LevelUp();
 
-// get score
-levelup.score();
-
 // set score
 levelup.score(123);
+
+// increase score
+levelup.increment();
+
+// decrease score
+levelup.increment();
+
+// get scorecard
+levelup.scorecard();
 ```
-score() returns...
+scorecard returns...
 ```
 {
 	score:123						// current total score
@@ -29,17 +35,33 @@ score() returns...
 	totallevels:10
 }
 ```
-levelup.js comes with 10 levels as default, each 100 points apart. These can easily be replaced with custom levels in the setup below.
+levelup.js comes with 10 levels as default These can easily be replaced with custom levels in the setup below.
 
-## Setup
+## Advanced setup
 
 ```
-var scorecard = new LevelUp(
+var levelup = new LevelUp(
 	{
-		persistant:boolean			// uses localStorage (TBC)
-		levels:{}					// custom levels (more explanation soon)
-		callback:function(){...}	// trigger when levelling up
+		persistant:true				// uses localStorage -  default: true
+		callback:function(){...}	// callback when levelling up
+		levels: 					// custom levels
+		[							
+			{
+				"checkmark": 0,
+				"status": "noob",
+				"quote": "You're just a little newbie"
+			}, 
+			{
+				"checkmark": 500,
+				"status": "champion",
+				"quote": "You're halfway there"
+			}, 
+			{
+				"checkmark": 1000,
+				"status": "legend",
+				"quote": "You made it!"
+			}
+		]
 	}
 );
-
 ```

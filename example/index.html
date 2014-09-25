@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>levelup.js - effortlessly manage player progress</title>
+        <title>levelup.js - checkpoints for your score</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -144,7 +144,7 @@
         <script>
 
             // setup
-            var n = new LevelUp();
+            var lu = new LevelUp();
 
             var scorecard = document.getElementById("scorecard");
             var slider = document.getElementById("slider");
@@ -152,7 +152,7 @@
 
             function updateScore(v){
                 // Set score
-                n.score(v);
+                lu.score(v);
                 updateCard();
             };
 
@@ -160,7 +160,7 @@
                 var s = template;
 
                 // Get scorecard
-                var d = n.scorecard();
+                var d = lu.scorecard();
 
                 // populate template
                 for(var p in d){

@@ -6,6 +6,7 @@
 	_defaults = {
 		level:0,
 		score:0,
+		persistant: true,
 		levels:[
 			{
 				"checkmark": 0,
@@ -109,11 +110,16 @@
 					levelup:levelup,
 					totallevels:_settings.levels.length
 				}, current);
-
 				if(levelup){
 					_settings.callback(_scorecard);
 				}
 				this._save();
+			},
+			increment: function(value){
+				this.score(_scorecard.score + (value || 1));
+			},
+			decrement: function(value){
+				this.score(_scorecard.score - (value || 1));
 			},
 			scorecard: function(){
 				return _scorecard;
@@ -128,10 +134,10 @@
 				return obj1;
 			},
 			_save: function(){
-				return localStorage.setItem("levelupscore", _scorecard.score);
+				return _settings.persistant ? localStorage.setItem("levelupscore", _scorecard.score) : false;
 			},
 			_get: function(){
-				return localStorage.getItem("levelupscore") || 0;
+				return _settings.persistant ? parseFloat(localStorage.getItem("levelupscore")) || 0 : 0;
 			}
 	};
 
