@@ -2,6 +2,7 @@
 
 (function(){
 	var _settings,
+	_scorecard, 
 	_defaults = {
 		level:0,
 		score:0,
@@ -62,6 +63,7 @@
 
 	var LevelUp = function(settings){
 		_settings = this._merge(_defaults, settings || {});
+		this.score(this._get());
 	};
 
 	LevelUp.prototype = {
@@ -69,6 +71,7 @@
 
 			score: function(score){
 
+				score = score !== undefined ? score : 0;
 				var total = 0, next, current;
 				var levelCount = _settings.levels.length;
 
@@ -85,7 +88,6 @@
 					level = levelCount;
 					current = _settings.levels[levelCount-1];
 				}
-				// current = current ? current : _settings.levels[levelCount-1];
 
 				var levelscore = score - current.checkmark;
 				var leveltotal = next.checkmark - current.checkmark;
@@ -97,7 +99,7 @@
 				var levelup = _settings.level!==level;
 				_settings.level = level;
 
-				var data = this._merge({
+				_scorecard = this._merge({
 					score:score,
 					level:level,
 					levelscore:levelscore,
@@ -109,10 +111,12 @@
 				}, current);
 
 				if(levelup){
-					_settings.callback(data);
+					_settings.callback(_scorecard);
 				}
-				return data;
-
+				this._save();
+			},
+			scorecard: function(){
+				return _scorecard;
 			},
 			_restrict: function(value){
 				return Math.max(Math.min(value, 100), 0);
@@ -124,10 +128,10 @@
 				return obj1;
 			},
 			_save: function(){
-				return localStorage.saveItem("levelupscore", _scoreboard);
+				return localStorage.setItem("levelupscore", _scorecard.score);
 			},
 			_get: function(){
-				return localStorage.getItem("levelupscore");
+				return localStorage.getItem("levelupscore") || 0;
 			}
 	};
 

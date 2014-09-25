@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>levelup.js - effortlessly manage players progress</title>
+        <title>levelup.js - effortlessly manage player progress</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
@@ -14,30 +14,31 @@
                 font-family: 'Lato', sans-serif;
                 text-align: center;
                 font-size: 16px;
-                background-image: url(img/geometry2.png);
+                margin:0px;
+                padding:0px;
             }
             #page{
                 display: inline-block;
-                width: 320px;
+                width: 300px;
             }
             h1{
                 font-weight: 100;
-                font-size: 5em;
+                font-size: 4.5em;
                 margin-bottom:0;
+                margin-top:0.5em;
             }
             h2{
                 font-weight: 300;
                 font-size: 0.85em;
                 color: #999;
                 margin-bottom:4em;
+
             }
             #scorecard{
-                /*width:100%;*/
                 text-align: left;
                 padding:20px;
                 background: #444;
                 color:#FFF;
-                border-radius: 10px;
                 margin-bottom:10px;
             }
             #status{
@@ -56,14 +57,24 @@
                 font-size: .75em;
                 color: #888;
             }
+            a{
+                color:#3D9970;
+            }
             .score{
                 clear: both;
                 margin-bottom:10px;
                 font-size: 0.85em;
             }
             #score{
-                font-size: 0.75em;
+                font-size: 1em;
+                width:140px;
+                height:40px;
+                line-height: 40px;
                 color: #999;
+                background: #EEE;
+                display: inline-block;
+                border-radius: 20px;
+                margin-bottom: 10px;
             }
             h3{
                 margin:0;
@@ -87,72 +98,85 @@
             progress[value] {
                 -webkit-appearance: none;
                 appearance: none;
+                height:20px;
             }         
             progress[value]::-webkit-progress-bar {
-                background-color: #FFF;
-                border-radius: 50px;
+                background-color: #666;
+                border-radius: 0px;
                 overflow: hidden;
             } 
             progress[value]::-webkit-progress-value {
                 background: #3D9970;
-                border-radius: 50px; 
-                /*background-size: 35px 20px, 100% 100%, 100% 100%;*/
+                border-radius: 0px; 
             }
         </style>
     </head>
     <body>
         <section id="page">
             <h1>levelup.js</h1>
-            <h2>effortlessly manage players progress</h2>
+            <h2>checkpoints for your score</h2>
             <div id='score'></div>
-            <input type="range" min="0" max="4200" value="225" oninput="update(this.value)" />
+            <input id="slider" type="range" min="0" max="4200" value="225" oninput="updateScore(this.value)" />
             <br/><br/>
 
             <div id='scorecard'>
 
                 <div id='icon'></div>
                 <h3>John Doe</h3>
+                Level: {level} <br/>
                 Status: {status}<br/>
                 <i>'{quote}'</i>
 
                 <div class='score'>
                     Score: {score} <br/>
-                    Level: {level} <br/>
                     Level score: {levelscore}/{leveltotal} <br/>
                     Total progress: {totalprogress}% <br/>
                 </div>
                 <progress max="100" value="{levelprogress}"></progress>
                 
             </div>
+            <br/>
+            <a href="https://github.com/mulhoon/levelup.js">Read more</a> &nbsp;&middot;&nbsp;
+            <a href="https://github.com/mulhoon/levelup.js">Download on Github</a>
+            <br/><br/><br/>
         </section>
 
         <script>
 
-            var upgradeCallback = function(level){
-                // example callback when changing level
-            };
-
-            var n = new LevelUp({
-                callback:upgradeCallback
-            });
-
+            // setup
+            var n = new LevelUp();
 
             var scorecard = document.getElementById("scorecard");
-            
+            var slider = document.getElementById("slider");
             var template = scorecard.innerHTML;
-            function update(v){
+
+            function updateScore(v){
+                // Set score
+                n.score(v);
+                updateCard();
+            };
+
+            function updateCard(){
                 var s = template;
-                var d = n.score(v);
+
+                // Get scorecard
+                var d = n.scorecard();
+
+                // populate template
                 for(var p in d){
                     s=s.replace(new RegExp('{'+p+'}','g'), d[p]);
                 }
+
+                slider.value = d.score;
+
                 scorecard.innerHTML = s;
                 scorecard.className = d.status;
-                document.getElementById("score").innerHTML = 'Score - '+d.score;
+                document.getElementById("score").innerHTML = 'score: '+d.score;
                 document.getElementById("icon").className = 'icons8-' + d.status;
             };
 
-            update(225);
+            updateCard();
+
 
         </script>
 
