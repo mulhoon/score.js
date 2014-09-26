@@ -2,8 +2,6 @@
 
 **levelup.js** is micro javascript module to manage player progress across gaming levels. DEMO: http://mulhoon.github.io/levelup.js/
 
-*This is a work in progress*
-
 ## Quick usage
 ```
 var levelup = new LevelUp();
