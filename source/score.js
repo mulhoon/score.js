@@ -3,9 +3,11 @@
 (function(){
 	var _settings,
 	_scorecard, 
+	_timer,
 	_defaults = {
 		level:0,
 		score:0,
+		multiplier:1,
 		persistant: true,
 		levels:[
 			{
@@ -114,12 +116,25 @@
 					_settings.callback(_scorecard);
 				}
 				this._save();
+				return this;
 			},
 			increment: function(value){
-				this.set(_scorecard.score + (value || 1));
+				this.set(_scorecard.score + ((value || 1)*_settings.multiplier));
+				return this;
 			},
 			decrement: function(value){
-				this.set(_scorecard.score - (value || 1));
+				this.set(_scorecard.score - ((value || 1)*_settings.multiplier));
+				return this;
+			},
+			multiplier: function(value, time, callback){
+				_settings.multiplier = value;
+				if(time){
+					clearTimeout(_timer);
+					_timer = setTimeout(function(){
+						_settings.multiplier = 1;
+						if(callback){callback();}
+					},time);
+				}
 			},
 			scorecard: function(){
 				return _scorecard;

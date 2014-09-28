@@ -69,4 +69,19 @@ var score = new Score(
 	}
 );
 ```
+
+## Bonus feature - multiplier
+
+```javascript
+// multiply all increments and decrements by 2 from now on
+score.multipler(2);
+
+// multiply all increments and decrements by 3 for the next 5 seconds
+score.multipler(3, 5000);
+
+// multiply all increments and decrements by 4 for the next 5 seconds 
+// with a callback
+score.multipler(4, 5000, function(){ ... });
+```
+
 Written by Mulhoon 2014
