@@ -84,4 +84,5 @@ score.multipler(3, 5000);
 score.multipler(4, 5000, function(){ ... });
 ```
 
-Written by Mulhoon 2014
+Written by Mulhoon 2014.
+Please report any [issues](https://github.com/mulhoon/score.js/issues)
