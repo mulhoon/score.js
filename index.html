@@ -2,11 +2,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>levelup.js - checkpoints for your score</title>
+		<title>score.js - levels, checkpoints and badges for your score in Javascript</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 
-		<script src="source/levelup.js"></script>
+		<script src="source/score.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
 		<link href="font/font_icons8.css" rel="stylesheet">
 		<style>
@@ -113,8 +113,8 @@
 	</head>
 	<body>
 		<section id="page">
-			<h1>levelup.js</h1>
-			<h2>checkpoints for your score</h2>
+			<h1>score.js</h1>
+			<h2>levels, checkpoints and badges for your score</h2>
 			<div id='score'></div>
 			<input id="slider" type="range" min="0" max="4200" value="225" oninput="updateScore(this.value)" />
 			<br/><br/>
@@ -137,14 +137,14 @@
 			</div>
 			<br/>
 			<a href="https://medium.com/@mulhoon/easy-gamification-in-javascript-with-levelup-js-8ff3b67e7706">Read more</a> &nbsp;&middot;&nbsp;
-			<a href="https://github.com/mulhoon/levelup.js">Download on Github</a>
+			<a href="https://github.com/mulhoon/score.js">Download on Github</a>
 			<br/><br/><br/>
 		</section>
 
 		<script>
 
 			// setup
-			var lu = new LevelUp();
+			var score = new Score();
 
 			var scorecard = document.getElementById("scorecard");
 			var slider = document.getElementById("slider");
@@ -152,7 +152,7 @@
 
 			function updateScore(v){
 				// Set score
-				lu.score(v);
+				score.set(v);
 				updateCard();
 			};
 
@@ -160,7 +160,7 @@
 				var s = template;
 
 				// Get scorecard
-				var d = lu.scorecard();
+				var d = score.scorecard();
 
 				// populate template
 				for(var p in d){
@@ -179,15 +179,6 @@
 
 
 		</script>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  ga('create', 'UA-40163004-2', 'auto');
-		  ga('send', 'pageview');
-
-		</script>
 	</body>
 </html>
