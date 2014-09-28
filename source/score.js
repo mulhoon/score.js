@@ -1,4 +1,4 @@
-/*! levelup.js ~ (c) 2014 Nic Mulvaney */
+/*! score.js ~ (c) 2014 Nic Mulvaney */
 
 (function(){
 	var _settings,
@@ -62,15 +62,15 @@
 		callback:function(){}
 	};
 
-	var LevelUp = function(settings){
+	var Score = function(settings){
 		_settings = this._merge(_defaults, settings || {});
-		this.score(this._get());
+		this.set(this._get());
 	};
 
-	LevelUp.prototype = {
+	Score.prototype = {
 			version: '0.0.1',
 
-			score: function(score){
+			set: function(score){
 
 				score = score !== undefined ? score : 0;
 				var total = 0, next, current;
@@ -116,10 +116,10 @@
 				this._save();
 			},
 			increment: function(value){
-				this.score(_scorecard.score + (value || 1));
+				this.set(_scorecard.score + (value || 1));
 			},
 			decrement: function(value){
-				this.score(_scorecard.score - (value || 1));
+				this.set(_scorecard.score - (value || 1));
 			},
 			scorecard: function(){
 				return _scorecard;
@@ -134,18 +134,18 @@
 				return obj1;
 			},
 			_save: function(){
-				return _settings.persistant ? localStorage.setItem("levelupscore", _scorecard.score) : false;
+				return _settings.persistant ? localStorage.setItem("nmscore", _scorecard.score) : false;
 			},
 			_get: function(){
-				return _settings.persistant ? parseFloat(localStorage.getItem("levelupscore")) || 0 : 0;
+				return _settings.persistant ? parseFloat(localStorage.getItem("nmscore")) || 0 : 0;
 			}
 	};
 
 
 	if ( typeof module != 'undefined' && module.exports ) {
-		module.exports = LevelUp;
+		module.exports = Score;
 	} else {
-		window.LevelUp = LevelUp;
+		window.Score = Score;
 	}
 
 })();

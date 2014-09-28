@@ -1,27 +1,27 @@
-# levelup.js
+# score.js
 
 A small javascript module to add levels, checkpoints and badges to a linear score. 
 
-See the [demo](http://mulhoon.github.io/levelup.js/) or read an [introduction](https://medium.com/@mulhoon/easy-gamification-in-javascript-with-levelup-js-8ff3b67e7706)
+See the [demo](http://mulhoon.github.io/score.js/) or read an [introduction](https://medium.com/@mulhoon/easy-gamification-in-javascript-with-levelup-js-8ff3b67e7706)
 
 ## Quick usage
 ```javascript
-var levelup = new LevelUp();
+var score = new Score();
 
 // set score
-levelup.score(123);
+score.set(123);
 
 // increase score by 1
-levelup.increment();
+score.increment();
 
 // increase score by 10
-levelup.increment(10);
+score.increment(10);
 
 // decrease score by 1
-levelup.decrement();
+score.decrement();
 
 // get scorecard
-levelup.scorecard();
+score.scorecard();
 ```
 scorecard returns...
 ```javascript
@@ -38,12 +38,13 @@ scorecard returns...
 	totallevels:10 					// total levels
 }
 ```
-levelup.js comes with 10 levels as default These can easily be replaced with custom levels in the setup below.
+score.js comes with 10 levels as default. These can be replaced with custom levels using the advanced setup below.
 
 ## Advanced setup
 
+
 ```javascript
-var levelup = new LevelUp(
+var score = new Score(
 	{
 		persistant:true				// uses localStorage -  default: true
 		callback:function(){...}	// callback when levelling up

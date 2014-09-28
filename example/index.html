@@ -2,11 +2,11 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>levelup.js - checkpoints for your score</title>
+		<title>score.js - checkpoints for your score</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width">
 
-		<script src="../source/levelup.js"></script>
+		<script src="../source/score.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
 		<link href="font/font_icons8.css" rel="stylesheet">
 		<style>
@@ -113,8 +113,8 @@
 	</head>
 	<body>
 		<section id="page">
-			<h1>levelup.js</h1>
-			<h2>checkpoints for your score</h2>
+			<h1>score.js</h1>
+			<h2>levels, checkpoints and badges for your score</h2>
 			<div id='score'></div>
 			<input id="slider" type="range" min="0" max="4200" value="225" oninput="updateScore(this.value)" />
 			<br/><br/>
@@ -144,7 +144,7 @@
 		<script>
 
 			// setup
-			var lu = new LevelUp();
+			var score = new Score();
 
 			var scorecard = document.getElementById("scorecard");
 			var slider = document.getElementById("slider");
@@ -152,7 +152,7 @@
 
 			function updateScore(v){
 				// Set score
-				lu.score(v);
+				score.set(v);
 				updateCard();
 			};
 
@@ -160,7 +160,7 @@
 				var s = template;
 
 				// Get scorecard
-				var d = lu.scorecard();
+				var d = score.scorecard();
 
 				// populate template
 				for(var p in d){
