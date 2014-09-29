@@ -70,7 +70,8 @@ var score = new Score(
 );
 ```
 
-## Bonus feature - multiplier
+## Multipliers
+Handy when you want to give your user double or triple points for a given duration.
 
 ```javascript
 // multiply all increments and decrements by 2 from now on
@@ -84,5 +85,30 @@ score.multipler(3, 5000);
 score.multipler(4, 5000, function(){ ... });
 ```
 
+## License
+
+The MIT License
+
+Copyright (c) 2010-2014 Nic Mulvaney
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+
 Written by Mulhoon 2014.
-Please report any [issues](https://github.com/mulhoon/score.js/issues)
+Please report any [issues](https://github.com/mulhoon/score.js/issues) or suggestions.
