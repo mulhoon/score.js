@@ -92,7 +92,7 @@ To provide an infinite score, you can allow your players to reset their score af
 ```javascript
 score.prestige();
 ```
-This resets the score to ```0``` and increments ```scorecard.prestige```. This will only work if ```scorecard.totalprogress``` is 100%.
+This resets the score to ```0``` and increments ```scorecard.prestige```. This only works if ```scorecard.totalprogress``` is 100%.
 
 ## License
 
