@@ -36,6 +36,7 @@ scorecard returns...
 	totalprogress:34.45, 			// percentage %
 	levelup: false,					// did we just level up?
 	totallevels:10 					// total levels
+	prestige:0 						// prestige level see below
 }
 ```
 score.js comes with 10 levels as default. These can be replaced with custom levels using the advanced setup below.
@@ -84,6 +85,14 @@ score.multipler(3, 5000);
 // with a callback
 score.multipler(4, 5000, function(){ ... });
 ```
+
+## Prestige levels
+To provide an infinite score, you can allow your players to reset their score after completing all levels. 
+
+```javascript
+score.prestige();
+```
+This resets the score to ```0``` and increments ```scorecard.prestige```. This will only work if ```scorecard.totalprogress``` is 100%.
 
 ## License
 
