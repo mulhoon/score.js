@@ -79,14 +79,14 @@ Handy when you want to give your user double or triple points for a given durati
 
 ```javascript
 // multiply all increments and decrements by 2 from now on
-score.multipler(2);
+score.multiplier(2);
 
 // multiply all increments and decrements by 3 for the next 5 seconds
-score.multipler(3, 5000);
+score.multiplier(3, 5000);
 
 // multiply all increments and decrements by 4 for the next 5 seconds 
 // with a callback
-score.multipler(4, 5000, function(){ ... });
+score.multiplier(4, 5000, function(){ ... });
 ```
 
 ## Prestige levels
