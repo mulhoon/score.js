@@ -4,8 +4,8 @@ A small javascript module to add levels, checkpoints and badges to a linear scor
 
 See the [demo](http://mulhoon.github.io/score.js/) or read an [introduction](https://medium.com/@mulhoon/easy-gamification-in-javascript-with-levelup-js-8ff3b67e7706)
 
-[<img src='http://img.shields.io/badge/Download-4.17kb-green.svg' />](https://raw.githubusercontent.com/mulhoon/score.js/master/lib/score.js)
-[<img src='http://img.shields.io/badge/Download%20Minified-2.4kb-green.svg' />](https://raw.githubusercontent.com/mulhoon/score.js/master/lib/score.min.js)
+[<img src='http://img.shields.io/badge/Download-4.46kb-green.svg' />](https://raw.githubusercontent.com/mulhoon/score.js/master/lib/score.js)
+[<img src='http://img.shields.io/badge/Download%20Minified-2.6kb-green.svg' />](https://raw.githubusercontent.com/mulhoon/score.js/master/lib/score.min.js)
 
 ## Quick usage
 ```javascript
@@ -42,9 +42,9 @@ scorecard returns...
 	prestige:0 						// prestige level see below
 }
 ```
-score.js comes with 10 levels as default. These can be replaced with custom levels using the advanced setup below.
+```lib/score.js``` comes with 10 levels as default. ```lib/score-basic.js``` comes with none. The default levels can be replaced with custom levels using the setup below.
 
-## Advanced setup
+## Setup
 
 
 ```javascript
