@@ -7,6 +7,12 @@ See the [demo](http://mulhoon.github.io/score.js/) or read an [introduction](htt
 [<img src='http://img.shields.io/badge/Download-4.46kb-green.svg' />](https://raw.githubusercontent.com/mulhoon/score.js/master/lib/score.js)
 [<img src='http://img.shields.io/badge/Download%20Minified-2.6kb-green.svg' />](https://raw.githubusercontent.com/mulhoon/score.js/master/lib/score.min.js)
 
+## Installation
+Install with npm, pnpm or yarn.
+```bash
+pnpm i score-js
+```
+
 ## Quick usage
 ```javascript
 var score = new Score();
