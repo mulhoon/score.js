@@ -10,7 +10,7 @@ See the [demo](http://mulhoon.github.io/score.js/) or read an [introduction](htt
 ## Installation
 Install with npm, pnpm or yarn.
 ```bash
-pnpm i score-js
+pnpm i @mulhoon/score.js
 ```
 
 ## Quick usage

@@ -6,6 +6,9 @@
   "copyright": "2014",
   "license": "MIT",
   "main": "lib/score.js",
+  "scripts": {
+    "build": "grunt"
+  },
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "^0.5.0",
@@ -21,5 +24,6 @@
   },
   "bugs": {
     "url": "https://github.com/mulhoon/score.js/issues"
-  }
+  },
+  "packageManager": "pnpm@9.2.0+sha512.98a80fd11c2e7096747762304106432b3ddc67dcf54b5a8c01c93f68a2cd5e05e6821849522a06fb76284d41a2660d5e334f2ee3bbf29183bf2e739b1dafa771"
 }
