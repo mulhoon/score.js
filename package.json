@@ -1,6 +1,6 @@
 {
   "name": "@mulhoon/score.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scoring, levels, checkpoints and badges in Javascript",
   "author": "Nic Mulvaney",
   "copyright": "2014",
